@@ -1,0 +1,91 @@
+@use "@angular/material" as mat;
+
+@import "color-pallets";
+@import "vars";
+
+#about-me {
+    position: relative;
+    padding: 64px;
+    min-height: 500px;
+    width: 100%;
+    background: mat.get-color-from-palette($md-cyan, 500);
+    z-index: 1;
+    transform: skewY(-5deg);
+
+    .content {
+        transform: skewY(5deg);
+        color: $mat-black;
+    }
+
+    .profile {
+        width: 300px;
+        padding: 32px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .image {
+            @include circle(150px);
+            box-shadow: 0 4px 4px rgba($black, .26);
+        }
+
+        .title {
+            margin-top: 16px;
+            font-weight: 500;
+        }
+
+        .subtitle {
+            font-style: italic;
+            font-weight: 300;
+        }
+
+        .cv-content {
+            margin-top: 32px;
+            width: 100%;
+
+            .cv-heading {
+
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                position: relative;
+
+                .cv-heading-inner {
+
+                    display: flex;
+                    align-items: center;
+                    gap: 4px;
+                    position: relative;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        background: mat.get-color-from-palette($md-violet, 500);
+                        bottom: -8px;
+                        height: 3px; /* Thick line under the text */
+                        width: 100%;
+                        z-index: 100;
+                    }
+                }
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    background: mat.get-color-from-palette($md-violet, 500);
+                    width: 100%;
+                    bottom: -7px;
+                    height: 1px; /* Thin line on the right */
+                    right: 0;
+                }
+
+                span {
+                    text-transform: uppercase;
+                    font-weight: 500;
+                }
+
+
+            }
+
+        }
+    }
+}
