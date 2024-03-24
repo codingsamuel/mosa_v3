@@ -1,0 +1,290 @@
+@use "@angular/material" as mat;
+@use "sass:math";
+
+@import "color-pallets";
+@import "vars";
+
+.section {
+    padding: 64px;
+}
+
+#aboutMe {
+    position: relative;
+    min-height: 500px;
+    width: calc(100% - 128px);
+    background: mat.get-color-from-palette($md-lightgreen, 500);
+    z-index: 1;
+    transform: skewY(-4deg);
+
+    .content {
+        display: flex;
+        gap: 32px;
+        transform: skewY(4deg);
+        color: $mat-black;
+        margin-top: 4%;
+    }
+
+    .profile {
+        flex-shrink: 0;
+        flex-basis: 20%;
+        width: 20%;
+        padding: 32px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-right: 2px solid $mat-black;
+
+        .image {
+            @include circle(150px);
+            box-shadow: 0 4px 4px rgba($black, .26);
+        }
+
+        .title {
+            margin-top: 16px;
+            font-weight: 500;
+        }
+
+        .subtitle {
+            font-style: italic;
+            font-weight: 300;
+        }
+
+        .cv-list {
+            margin-top: 32px;
+            width: 100%;
+
+            .cv-heading {
+                margin-bottom: 16px;
+
+                span {
+                    text-transform: uppercase;
+                    font-weight: 500;
+                }
+
+                &:not(:first-child) {
+                    margin-top: 16px;
+                }
+            }
+
+            .cv-heading,
+            .cv-heading-inner {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                position: relative;
+            }
+
+            .cv-heading-inner::before,
+            .cv-heading::after {
+                content: '';
+                position: absolute;
+                background: mat.get-color-from-palette($md-violet, 500);
+                width: 100%;
+                z-index: 100;
+            }
+
+            .cv-heading-inner::before {
+                bottom: -8px;
+                height: 3px; /* Thick line under the text */
+                width: calc(100% + 16px);
+            }
+
+            .cv-heading::after {
+                bottom: -7px;
+                height: 1px; /* Thin line on the right */
+                right: 0;
+            }
+
+            .cv-content {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 4px;
+
+                span:first-child {
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+
+    .bio {
+        flex-grow: 1;
+        flex-basis: 40%;
+        width: 40%;
+
+        h2 {
+            font-weight: 500;
+            margin-bottom: 16px;
+
+            &:not(:first-child) {
+                margin-top: 32px;
+            }
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 8px;
+        }
+    }
+
+    .image {
+        flex-grow: 1;
+        flex-basis: 40%;
+        width: 40%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+            margin-top: -25%;
+
+            path:first-child {
+                fill: lighten(mat.get-color-from-palette($md-lightgreen, 900), 2%);
+            }
+
+            path:nth-child(3) {
+                fill: mat.get-color-from-palette($md-violet, 400);
+            }
+        }
+    }
+
+    .download-btn {
+        margin-top: 32px;
+    }
+}
+
+#myServices {
+    z-index: 2;
+    position: relative;
+    width: calc(100% - 128px);
+    margin-bottom: 16px;
+
+    h1 {
+        text-align: center;
+        font-weight: 500;
+        font-size: 48px;
+    }
+
+    .card-wrapper {
+        display: flex;
+        justify-content: center;
+        gap: 64px;
+        margin-top: 64px;
+
+        mat-card {
+            width: 350px;
+            background-color: mat.get-color-from-palette($md-violet, 400);
+            box-shadow: 16px 16px 0 mat.get-color-from-palette($md-lightgreen, 500);
+
+            ::ng-deep .mat-mdc-card-header-text {
+                flex-grow: 1;
+            }
+
+            mat-card-header {
+                padding: 32px 32px 0;
+            }
+
+            mat-card-content {
+                padding: 0 32px;
+
+                &:last-child {
+                    padding-bottom: 32px;
+                }
+            }
+
+            mat-card-title {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: 32px;
+
+                span {
+                    font-weight: 300;
+                    font-size: 32px;
+                    text-align: center;
+                }
+            }
+
+            mat-icon {
+                @include mat-icon-size(48px);
+                display: block;
+                margin-bottom: 16px;
+            }
+        }
+    }
+}
+
+#rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: mat.get-color-from-palette($md-lightgreen, 500);
+
+    h1 {
+        font-weight: 900;
+        text-transform: uppercase;
+        color: mat.get-color-from-palette($md-violet, 500);
+        font-size: 48px;
+    }
+
+    .rating {
+        padding: 8px 32px;
+        background: #222222;
+        border-radius: 64px;
+        width: 320px;
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        align-items: center;
+        margin-top: 16px;
+
+        $size: 48px;
+        $color: #FFEB3B;
+
+        .stars {
+            display: flex;
+            color: $color;
+
+            /* You can style inputs directly thanks to appearance:none! */
+            input {
+                appearance: none;
+                width: $size;
+                height: $size;
+                text-align: center;
+                cursor: pointer;
+
+                &:not(:first-child) {
+                    margin-left: -12px;
+                }
+
+                &::after {
+                    content: "☆";
+                    font-size: calc($size * 3 / 4);
+                    line-height: $size;
+                    color: $color;
+                }
+
+                &:is(:checked, :hover)::after,
+                &:has(~ input:is(:checked, :hover))::after {
+                    content: "★";
+                }
+
+                &:hover ~ input::after {
+                    content: "☆";
+                }
+            }
+        }
+    }
+
+    .download-btns {
+        button {
+            display: block;
+            margin: 0 auto;
+
+            &:not(:last-child) {
+                margin-bottom: 16px;
+            }
+        }
+    }
+}
