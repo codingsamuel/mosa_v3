@@ -1,0 +1,91 @@
+@use "@angular/material" as mat;
+
+@import "color-pallets";
+
+$puterPadding: 64px;
+
+h2 {
+    font-weight: 400;
+    font-size: 40px;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 128px;
+    color: mat.get-color-from-palette($md-lightgreen, 500);
+}
+
+.header-wrapper {
+    padding: $puterPadding;
+    position: relative;
+    min-height: 65vh;
+
+    .left {
+        position: relative;
+        z-index: 100;
+    }
+
+    .right {
+        display: flex;
+        position: absolute;
+        justify-content: center;
+        bottom: -$puterPadding;
+        right: 10%;
+    }
+
+    .lines-bg {
+        position: absolute;
+        bottom: -47%;
+        left: -72%;
+    }
+
+    .my-photo {
+        z-index: 1;
+        max-width: 490px;
+    }
+
+    .download-btn {
+        font-weight: 300;
+        border-color: mat.get-color-from-palette($md-lightgreen, 500);
+        color: mat.get-color-from-palette($md-lightgreen, 500);
+        border-radius: 50px;
+        font-size: 16px;
+        height: auto;
+        padding: 16px 32px;
+        margin-top: 16px;
+        border-width: 2px;
+    }
+
+    .bubbles {
+        margin-top: 128px;
+        display: flex;
+        gap: 16px;
+
+        .bubble {
+            position: relative;
+            display: flex;
+            align-items: center;
+
+            .content {
+                z-index: 1;
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+
+                .label {
+                    font-weight: bold;
+                    color: mat.get-color-from-palette($md-lightgreen, 500);
+                    font-size: 40px;
+                }
+
+                .text {
+                    font-size: 24px;
+                    font-weight: 300;
+                }
+            }
+        }
+    }
+}
