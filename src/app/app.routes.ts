@@ -5,15 +5,10 @@ import { Type } from '@angular/core';
 export const routes: Routes = [
     {
         path: '',
-        redirectTo: 'home',
-        pathMatch: 'full',
-    },
-    {
-        path: 'home',
         loadComponent: (): Promise<Type<HomePage>> => import('./pages/home/home.page').then((m: { HomePage: Type<HomePage> }) => m.HomePage),
     },
     {
         path: '**',
-        redirectTo: 'home'
+        redirectTo: ''
     }
 ];

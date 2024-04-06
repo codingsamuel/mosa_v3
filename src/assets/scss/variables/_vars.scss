@@ -17,3 +17,61 @@ $mat-black: rgba($black, .87);
     @include size($size);
     border-radius: 50%;
 }
+
+@mixin ratingBase($color: #FFEB3B) {
+    .rating {
+        background: #222222;
+        border-radius: 64px;
+        width: 320px;
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        align-items: center;
+        margin-top: 16px;
+
+        .stars {
+            display: flex;
+            color: $color;
+
+            input {
+                appearance: none;
+                text-align: center;
+                cursor: pointer;
+
+                &:not(:first-child) {
+                    margin-left: -12px;
+                }
+
+                &::after {
+                    content: "☆";
+                    color: $color;
+                }
+
+                &:is(:checked, :hover)::after,
+                &:has(~ input:is(:checked, :hover))::after {
+                    content: "★";
+                }
+
+                &:hover ~ input::after {
+                    content: "☆";
+                }
+            }
+        }
+    }
+}
+
+@mixin ratingSize($size: 48px, $padding: 8px 32px) {
+    .rating {
+        padding: $padding;
+
+        .stars input {
+            width: $size;
+            height: $size;
+
+            &::after {
+                font-size: calc($size * 3 / 4);
+                line-height: $size;
+            }
+        }
+    }
+}

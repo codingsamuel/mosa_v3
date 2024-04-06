@@ -18,10 +18,9 @@ html, body {
 body {
     margin: 0;
     font-family: 'Montserrat', serif;
-    overflow-x: hidden;
 }
 
-button.mat-mdc-button-base {
+a.mat-mdc-raised-button:not(.menu-item) {
     border-radius: 32px;
     height: 48px;
     padding: 0 32px;

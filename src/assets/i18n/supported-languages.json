@@ -1,3 +1,7 @@
 {
-    "supportedLanguages": ["en"]
+    "supportedLanguages": [
+        "en-UK",
+        "de-DE",
+        "pt-PT"
+    ]
 }

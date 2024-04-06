@@ -1,5 +1,6 @@
 mat-toolbar {
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .logo {
@@ -10,8 +11,36 @@ mat-toolbar {
 .menu {
     display: flex;
     gap: 8px;
+    align-items: center;
 
-    a {
+    .lang {
+        cursor: pointer;
+        transition: .2s;
+
+        &:not(.active) {
+            opacity: .4;
+        }
+
+        &:hover, &.active {
+            opacity: 1;
+        }
+    }
+
+    .langs {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .menu-icon {
+        flex-shrink: 0;
+    }
+
+    &.responsive {
+        display: none;
+    }
+
+    .menu-item {
         font-weight: 100;
         text-transform: uppercase;
         transition: .3s ease-in-out;
@@ -53,5 +82,19 @@ mat-toolbar {
                 height: 2px;
             }
         }
+    }
+}
+
+@media screen and (max-width: 959px) {
+    mat-toolbar {
+        height: auto;
+        //flex-direction: column;
+        padding: 16px;
+    }
+
+    .menu {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
     }
 }

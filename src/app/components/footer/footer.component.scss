@@ -26,3 +26,10 @@ img {
     max-width: 200px;
     height: auto;
 }
+
+@media screen and (max-width: 959px) {
+    footer {
+        flex-direction: column;
+        gap: 16px;
+    }
+}

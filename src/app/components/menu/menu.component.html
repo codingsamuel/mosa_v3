@@ -1,9 +1,26 @@
 <mat-toolbar color="primary">
-    <img src="/assets/img/logo.png" alt="Logo" class="logo">
-    <div class="menu">
-        <a mat-button routerLink="#home" routerLinkActive="active">Home</a>
-        <a mat-button routerLink="#about-me" routerLinkActive="active">About Me</a>
-        <a mat-button routerLink="#my-services" routerLinkActive="active">My Services</a>
-        <a mat-button routerLink="#contact" routerLinkActive="active">Contact</a>
-    </div>
+    <img [ngSrc]="'./assets/img/logo.png'" [width]="200" [height]="28" alt="Logo" class="logo">
+    @if ((innerWidth$ | async) < 1000) {
+        <div class="menu-icon">
+            <button mat-icon-button (click)="isMenuOpen = !isMenuOpen">
+                <mat-icon>menu</mat-icon>
+            </button>
+        </div>
+    }
+    @if (isMenuOpen) {
+        <div class="menu" [@dropDownMenu]>
+            <button mat-button (click)="scrollTo('aboutMe')" class="menu-item">About Me</button>
+            <button mat-button (click)="scrollTo('myServices')" class="menu-item">My Services</button>
+            <button mat-button routerLink="#contact" routerLinkActive="active" class="menu-item">Contact</button>
+            <button mat-button routerLink="#contact" routerLinkActive="active" class="menu-item">Legal Notice</button>
+            <div class="langs">
+                @for (lang of (availableLangs$ | async); track $index) {
+                    <img [ngSrc]="'./assets/img/langs/'+ lang + '.png'" [width]="36" [height]="40" [alt]="lang"
+                         [tabindex]="$index + 1"
+                         class="lang" (click)="changeLang(lang)" [class.active]="(currentLang$ | async) === lang"
+                         (keyup.enter)="changeLang(lang)">
+                }
+            </div>
+        </div>
+    }
 </mat-toolbar>

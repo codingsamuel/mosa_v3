@@ -19,6 +19,7 @@ h1 {
     padding: $puterPadding;
     position: relative;
     min-height: 65vh;
+    overflow: hidden;
 
     .left {
         position: relative;
@@ -35,7 +36,7 @@ h1 {
 
     .lines-bg {
         position: absolute;
-        bottom: -47%;
+        bottom: -48%;
         left: -72%;
     }
 
@@ -86,6 +87,105 @@ h1 {
                     font-weight: 300;
                 }
             }
+        }
+    }
+}
+
+@media screen and (max-width: 1919px) {
+    h1 {
+        font-size: 106px;
+    }
+
+    .header-wrapper .lines-bg {
+        left: -68%;
+        bottom: -51%;
+    }
+}
+
+@media screen and (max-width: 1279px) {
+    h1 {
+        font-size: 96px;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+    .header-wrapper .bubbles {
+        flex-direction: column;
+        align-items: flex-start;
+
+        .bubble {
+            justify-content: center;
+        }
+    }
+}
+
+@media screen and (max-width: 959px) {
+    .header-wrapper {
+        .right {
+            position: relative;
+            bottom: -162px;
+            margin-top: -64px;
+            right: 0;
+        }
+
+        .lines-bg {
+            left: -25%;
+            bottom: -42%;
+        }
+
+        .bubbles {
+            margin-top: 64px;
+            align-items: center;
+        }
+    }
+}
+
+@media screen and (max-width: 599px) {
+    h1 {
+        font-size: 76px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .header-wrapper {
+        padding: 32px;
+        min-height: 100vh;
+
+        .right {
+            bottom: -112px;
+        }
+
+        .bubbles {
+            .bubble {
+                img {
+                    max-width: 248px;
+                    height: auto;
+                }
+
+                .content {
+                    .label {
+                        font-size: 36px;
+                    }
+
+                    .text {
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+
+        .my-photo {
+            max-width: 360px;
+        }
+
+        .lines-bg {
+            left: -118%;
+            bottom: -72%;
+            transform: scale(.7);
         }
     }
 }
