@@ -9,11 +9,10 @@
     }
     @if (isMenuOpen) {
         <div class="menu" [@dropDownMenu]>
-            <button mat-button (click)="scrollTo('aboutMe')" class="menu-item">About Me</button>
-            <button mat-button (click)="scrollTo('myServices')" class="menu-item">My Services</button>
-            <button mat-button routerLink="#contact" routerLinkActive="active" class="menu-item">Contact</button>
-            <button mat-button routerLink="#contact" routerLinkActive="active" class="menu-item">Legal Notice</button>
-            <div class="langs">
+            <button mat-button (click)="scrollTo('aboutMe')" class="menu-item">{{ 'mosa.pages.home.about-me.label' | translate }}</button>
+            <button mat-button (click)="scrollTo('myServices')" class="menu-item">{{ 'mosa.pages.home.my-services.label' | translate }}</button>
+            <button mat-button routerLink="#legalNotice" routerLinkActive="active" class="menu-item">{{ 'mosa.pages.home.legal-notice.label' | translate }}</button>
+            <div class="langs menu-item">
                 @for (lang of (availableLangs$ | async); track $index) {
                     <img [ngSrc]="'./assets/img/langs/'+ lang + '.png'" [width]="36" [height]="40" [alt]="lang"
                          [tabindex]="$index + 1"

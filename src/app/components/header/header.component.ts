@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { MatButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
@@ -8,6 +9,7 @@ import { MatIcon } from '@angular/material/icon';
     imports: [
         MatButton,
         MatIcon,
+        TranslateModule,
     ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'

@@ -1,8 +1,12 @@
 {
+    "mosa.pages.home.header.intro[0].label": "I'm {{ name }}",
     "mosa.pages.home.biography.label": "Biography",
     "mosa.pages.home.my-journey.label": "My Journey",
     "mosa.pages.home.social-media.label": "Social Media",
+    "mosa.pages.home.contact.label": "Contact",
+    "mosa.pages.home.legal-notice.label": "Legal Notice",
     "mosa.pages.home.my-services.label": "My Services",
+    "mosa.pages.home.about-me.label": "About Me",
     "mosa.pages.home.my-services[0].label": "UI / UX Design",
     "mosa.pages.home.my-services[0].text[0].value": "As a UX/UI designer, I specialize in crafting modern and creative designs that captivate users.With tools like Adobe XD and Figma, I bring ideas to life with a touch of innovation.",
     "mosa.pages.home.my-services[0].text[1].value": "My designs aren't just visually appealing; they're intuitive and user-friendly.",

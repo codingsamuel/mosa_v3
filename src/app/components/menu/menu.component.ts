@@ -6,7 +6,7 @@ import { BehaviorSubject } from 'rxjs';
 import { AsyncPipe, NgOptimizedImage } from '@angular/common';
 import { MatIcon } from '@angular/material/icon';
 import { animate, query, sequence, stagger, style, transition, trigger } from '@angular/animations';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import * as supportedLangs from '../../../assets/i18n/supported-languages.json';
 
 export const DropDownAnimation = trigger('dropDownMenu', [
@@ -54,6 +54,7 @@ export const DropDownAnimation = trigger('dropDownMenu', [
         MatIcon,
         MatButton,
         NgOptimizedImage,
+        TranslateModule,
     ],
     templateUrl: './menu.component.html',
     styleUrl: './menu.component.scss',

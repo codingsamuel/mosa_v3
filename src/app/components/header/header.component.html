@@ -1,10 +1,10 @@
 <div class="header-wrapper">
     <div class="left">
         <h2>Hey,</h2>
-        <h1>I'm {{ name }}</h1>
+        <h1>{{ 'mosa.pages.home.header.intro[0].label' | translate: { name } }}</h1>
         <h2>{{ branch }}</h2>
         <button mat-stroked-button color="accent" class="download-btn" (click)="scrollTo('aboutMe')">
-            About Me
+           {{ 'mosa.pages.home.about-me.label' | translate }}
             <mat-icon iconPositionEnd>trending_flat</mat-icon>
         </button>
 
@@ -19,7 +19,7 @@
             <div class="bubble">
                 <img src="./assets/img/bubble-2.svg" alt="Bubble">
                 <div class="content">
-                    <span class="label">75+</span>
+                    <span class="label">65+</span>
                     <span class="text">Projects Completed</span>
                 </div>
             </div>
