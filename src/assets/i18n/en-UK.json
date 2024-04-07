@@ -2,6 +2,9 @@
     "mosa.commons.since.label": "since",
 
     "mosa.pages.home.header.intro[0].label": "I'm {{ name }}",
+    "mosa.pages.home.header.bubbles[0].label": "Years Of Experience",
+    "mosa.pages.home.header.bubbles[1].label": "Projects Completed",
+    "mosa.pages.home.header.bubbles[2].label": "Made With Love",
     "mosa.pages.home.biography.label": "Biography",
     "mosa.pages.home.my-journey.label": "My Journey",
     "mosa.pages.home.social-media.label": "Social Media",

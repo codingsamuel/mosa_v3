@@ -2,7 +2,7 @@
     <div class="left">
         <h2>Hey,</h2>
         <h1>{{ 'mosa.pages.home.header.intro[0].label' | translate: { name } }}</h1>
-        <h2>{{ branch }}</h2>
+        <h2>{{ branch | translate }}</h2>
         <button mat-stroked-button color="accent" class="download-btn" (click)="scrollTo('aboutMe')">
            {{ 'mosa.pages.home.about-me.label' | translate }}
             <mat-icon iconPositionEnd>trending_flat</mat-icon>
@@ -13,21 +13,21 @@
                 <img src="./assets/img/bubble-1.svg" alt="Bubble">
                 <div class="content">
                     <span class="label">3.5+</span>
-                    <span class="text">Years Of Experience</span>
+                    <span class="text">{{ 'mosa.pages.home.header.bubbles[0].label' | translate }}</span>
                 </div>
             </div>
             <div class="bubble">
                 <img src="./assets/img/bubble-2.svg" alt="Bubble">
                 <div class="content">
                     <span class="label">65+</span>
-                    <span class="text">Projects Completed</span>
+                    <span class="text">{{ 'mosa.pages.home.header.bubbles[1].label' | translate }}</span>
                 </div>
             </div>
             <div class="bubble">
                 <img src="./assets/img/bubble-3.svg" alt="Bubble">
                 <div class="content">
                     <span class="label">100%</span>
-                    <span class="text">Made With Love</span>
+                    <span class="text">{{ 'mosa.pages.home.header.bubbles[2].label' | translate }}</span>
                 </div>
             </div>
         </div>
