@@ -1,0 +1,159 @@
+{
+    "firstName": "Samuel",
+    "lastName": "Marcelino Moutinho",
+    "branch": "Frontend Developer",
+    "imageUrl": "./assets/img/me-square.png",
+    "cvInfo": [
+        {
+            "label": "mosa.models.profile[profile].label",
+            "icon": "account_circle",
+            "items": [
+                {
+                    "key": "mosa.models.profile[age].label",
+                    "value": "23"
+                },
+                {
+                    "key": "mosa.models.profile[nationality].label",
+                    "value": "mosa.models.profile[nationality].value"
+                },
+                {
+                    "key": "mosa.models.profile[hobbys].label",
+                    "value": "mosa.models.profile[hobbys].value"
+                }
+            ]
+        },
+        {
+            "label": "mosa.models.profile[location].label",
+            "icon": "location_on",
+            "items": [
+                {
+                    "key": "mosa.models.profile[country].label",
+                    "value": "mosa.models.profile[country].value"
+                },
+                {
+                    "key": "mosa.models.profile[state].label",
+                    "value": "mosa.models.profile[state].value"
+                },
+                {
+                    "key": "mosa.models.profile[city].label",
+                    "value": "Osnabrück"
+                }
+            ]
+        },
+        {
+            "label": "mosa.models.profile[languages].label",
+            "icon": "language",
+            "items": [
+                {
+                    "key": "mosa.models.languages[german].label",
+                    "value": "mosa.models.languages.skills[native].label"
+                },
+                {
+                    "key": "mosa.models.languages[portuguese].label",
+                    "value": "mosa.models.languages.skills[native].label"
+                },
+                {
+                    "key": "mosa.models.languages[english].label",
+                    "value": "mosa.models.languages.skills[fluent].label"
+                }
+            ]
+        },
+        {
+            "label": "mosa.models.profile[skills].label",
+            "icon": "computer",
+            "items": [
+                "Angular",
+                "Ionic",
+                "TypeScript",
+                "JavaScript",
+                "HTML",
+                "SCSS",
+                "Java",
+                "C#"
+            ]
+        },
+        {
+            "label": "mosa.models.profile[other-skills].label",
+            "icon": "computer",
+            "items": [
+                "Git",
+                "Jenkins",
+                "SonarQube",
+                "ESLint",
+                "Figma",
+                "Adobe XD",
+                "Husky",
+                "IntelliJ"
+            ]
+        }
+    ],
+    "socialMedia": [
+        {
+            "name": "Instagram",
+            "icon": "instagram",
+            "url": "https://instagram.com/samucodes"
+        },
+        {
+            "name": "GitHub",
+            "icon": "github",
+            "url": "https://github.com/codingsamuel"
+        },
+        {
+            "name": "Xing",
+            "icon": "xing",
+            "url": "https://www.xing.com/profile/Samuel_MarcelinoMoutinho"
+        }
+    ],
+    "downloads": [
+        {
+            "name": "mosa.models.profile.downloads[cv].label",
+            "icon": "download",
+            "url": "https://drive.google.com/file/d/1"
+        },
+        {
+            "name": "mosa.models.profile.downloads[figma].label",
+            "icon": "download",
+            "url": "https://www.figma.com/file/5HSF0H86r1rU3Zh4zLXAa2/Landing-Page?type=design&node-id=0%3A1&mode=design&t=mDFWYHPuNBwjwok3-1"
+        },
+        {
+            "name": "mosa.models.profile.downloads[github].label",
+            "icon": "open_in_new",
+            "url": "https://github.com/codingsamuel/mosa_v3"
+        }
+    ],
+    "timeline": [
+        {
+            "label": "mosa.models.profile.timeline[0][title].label",
+            "icon": "work",
+            "startDate": "since August 2020",
+            "items": [
+                "mosa.models.profile.timeline[0][list][0].label",
+                "mosa.models.profile.timeline[0][list][1].label",
+                "mosa.models.profile.timeline[0][list][2].label"
+            ]
+        },
+        {
+            "label": "mosa.models.profile.timeline[1][title].label",
+            "icon": "local_library",
+            "startDate": "2017-08-01",
+            "endDate": "2020-07-31",
+            "items": [
+                "mosa.models.profile.timeline[1][list][0].label",
+                "mosa.models.profile.timeline[1][list][1].label",
+                "mosa.models.profile.timeline[1][list][2].label",
+                "mosa.models.profile.timeline[1][list][3].label"
+            ]
+        },
+        {
+            "label": "mosa.models.profile.timeline[2][title].label",
+            "icon": "school",
+            "startDate": "2016-08-01",
+            "endDate": "2017-07-31",
+            "items": [
+                "mosa.models.profile.timeline[2][list][0].label",
+                "mosa.models.profile.timeline[2][list][1].label",
+                "mosa.models.profile.timeline[2][list][2].label"
+            ]
+        }
+    ]
+}

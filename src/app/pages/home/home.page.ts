@@ -2,19 +2,21 @@ import { Component, OnInit } from '@angular/core';
 import { HeaderComponent } from '../../components/header/header.component';
 import { MatIcon } from '@angular/material/icon';
 import { AsyncPipe, DatePipe, DecimalPipe, JsonPipe, NgOptimizedImage, NgTemplateOutlet } from '@angular/common';
-import cvDataDef from '../../../assets/raw/profile.json';
+import webProfile from '../../../assets/raw/web-profile.json';
+import cvProfile from '../../../assets/raw/cv-profile.json';
 import { AsPipe } from '../../pipes/as.pipe';
 import { MatChip, MatChipSet } from '@angular/material/chips';
-import { MatAnchor, MatIconAnchor } from '@angular/material/button';
+import { MatAnchor, MatButton, MatIconAnchor } from '@angular/material/button';
 import { MatCard, MatCardContent, MatCardHeader, MatCardTitle } from '@angular/material/card';
 import { FooterComponent } from '../../components/footer/footer.component';
-import { IProfile } from '../../models/profile.model';
+import { IWebProfile } from '../../models/cv/web-profile.model';
 import { TranslateModule } from '@ngx-translate/core';
-import { SplitPipe } from '../../pipes/split.pipe';
 import { HomeFacade } from '../../services/facades/home.facade';
 import { IRating } from '../../models/rating.model';
 import { Observable } from 'rxjs';
 import { IHomeState } from '../../models/states/home.state';
+import { PdfGeneratorService } from '../../services/pdf-generator.service';
+import { ICvProfile } from '../../models/cv/cv-profile.model';
 
 // Type definitions
 // type CvInfoType = typeof cvDataDef;
@@ -23,7 +25,7 @@ import { IHomeState } from '../../models/states/home.state';
 @Component({
     selector: 'app-home',
     standalone: true,
-    imports: [ HeaderComponent, MatIcon, NgTemplateOutlet, AsPipe, JsonPipe, MatChipSet, MatChip, MatIconAnchor, MatCard, MatCardTitle, MatCardHeader, MatCardContent, FooterComponent, MatAnchor, TranslateModule, SplitPipe, AsyncPipe, DecimalPipe, NgOptimizedImage, DatePipe ],
+    imports: [ HeaderComponent, MatIcon, NgTemplateOutlet, AsPipe, JsonPipe, MatChipSet, MatChip, MatIconAnchor, MatCard, MatCardTitle, MatCardHeader, MatCardContent, FooterComponent, MatAnchor, TranslateModule, AsyncPipe, DecimalPipe, NgOptimizedImage, DatePipe, MatButton ],
     templateUrl: './home.page.html',
     styleUrl: './home.page.scss',
 })
@@ -31,20 +33,22 @@ export class HomePage implements OnInit {
 
     public homeState$: Observable<IHomeState>;
 
-    public cvData: IProfile = cvDataDef;
+    public cvData: IWebProfile = webProfile;
 
     protected readonly ListType: Record<string, string>;
 
     constructor(
-        private myHomeFacade: HomeFacade,
+        private readonly myHomeFacade: HomeFacade,
+        private readonly myPdfGeneratorService: PdfGeneratorService,
     ) {
-        console.log('cvData', cvDataDef);
+        console.log('cvData', webProfile);
     }
 
     public ngOnInit() {
         this.homeState$ = this.myHomeFacade.subState();
 
         void this.loadRating();
+        // this.generateCv();
     }
 
     public async addRating(value: number): Promise<void> {
@@ -82,6 +86,11 @@ export class HomePage implements OnInit {
 
             console.log('element', document.getElementById('rating1'));
         }, 500);
+    }
+
+    public generateCv(): void {
+        this.myPdfGeneratorService.generate(cvProfile as ICvProfile);
+        console.log('cvData', webProfile);
     }
 
 }

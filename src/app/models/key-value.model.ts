@@ -1,4 +1,4 @@
 export interface IKeyValue {
     key: string;
-    value: string;
+    value: string | string[];
 }

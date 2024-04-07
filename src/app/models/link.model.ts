@@ -1,5 +1,7 @@
+import { MaterialSymbol } from 'material-symbols';
+
 export interface ILink {
-    name: string;
-    icon: string;
-    url: string;
+    name?: string;
+    icon?: MaterialSymbol | string;
+    url?: string;
 }

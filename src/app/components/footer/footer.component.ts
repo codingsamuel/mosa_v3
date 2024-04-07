@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 import { MatIconAnchor } from '@angular/material/button';
 import { ILink } from '../../models/link.model';
-import cvData from '../../../assets/raw/profile.json';
+import cvData from '../../../assets/raw/web-profile.json';
 import { NgOptimizedImage } from '@angular/common';
 
 @Component({

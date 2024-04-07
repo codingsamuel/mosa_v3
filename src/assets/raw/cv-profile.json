@@ -1,0 +1,167 @@
+{
+    "firstName": "Samuel",
+    "lastName": "Marcelino Moutinho",
+    "branch": "Frontend Developer",
+    "imageUrl": "./assets/img/me-portrait.png",
+    "cvInfo": [
+        {
+            "label": "mosa.models.profile[profile].label",
+            "icon": "\ue853",
+            "items": [
+                {
+                    "key": "mosa.models.profile[birthday-and-birthplace].label",
+                    "value": [
+                        "date:2000-04-25",
+                        "Osnabrück"
+                    ]
+                },
+                {
+                    "key": "mosa.models.profile[nationality].label",
+                    "value": "mosa.models.profile[nationality].value"
+                },
+                {
+                    "key": "mosa.models.profile[marital-status].label",
+                    "value": "mosa.models.profile[marital-status].value"
+                }
+            ]
+        },
+        {
+            "label": "mosa.models.profile[location].label",
+            "icon": "\uE0C8",
+            "items": [
+                {
+                    "key": "mosa.models.profile[country].label",
+                    "value": "mosa.models.profile[country].value"
+                },
+                {
+                    "key": "mosa.models.profile[state].label",
+                    "value": "mosa.models.profile[state].value"
+                },
+                {
+                    "key": "mosa.models.profile[city].label",
+                    "value": "Osnabrück"
+                }
+            ]
+        },
+        {
+            "label": "mosa.models.profile[skills].label",
+            "icon": "\ue30a",
+            "items": [
+                "Angular",
+                "Ionic",
+                "TypeScript",
+                "JavaScript",
+                "HTML",
+                "SCSS",
+                "Java",
+                "C#"
+            ]
+        },
+        {
+            "label": "mosa.models.profile[other-skills].label",
+            "icon": "\uE30A",
+            "items": [
+                "Git",
+                "Jenkins",
+                "SonarQube",
+                "ESLint",
+                "Figma",
+                "Adobe XD",
+                "Husky",
+                "IntelliJ"
+            ]
+        }
+    ],
+    "timeline": [
+        {
+            "label": "mosa.models.profile.timeline[0][cv-title].label",
+            "icon": "\ue8f9",
+            "startDate": "2020-08-01",
+            "items": [
+                "SLA Software Logistik Artland GmbH"
+            ]
+        },
+        {
+            "label": "mosa.models.profile.timeline[1][cv-title].label",
+            "icon": "\ue54b",
+            "startDate": "2017-08-01",
+            "endDate": "2020-07-31",
+            "items": [
+                "soft-evolution GmbH & Co. KG"
+            ]
+        },
+        {
+            "label": "mosa.models.profile.timeline[2][cv-title].label",
+            "icon": "\ue80c",
+            "startDate": "2016-08-01",
+            "endDate": "2017-07-31",
+            "items": [
+                "mosa.models.profile.timeline[2][cv-list][0].label"
+            ]
+        },
+        {
+            "label": "",
+            "icon": "",
+            "startDate": "2010-08-01",
+            "endDate": "2016-07-31",
+            "items": [
+                "mosa.models.profile.timeline[2][cv-list][1].label"
+            ]
+        },
+        {
+            "label": "mosa.models.profile.timeline[3][cv-title].label",
+            "icon": "\ue85d",
+            "startDate": "2016-10-01",
+            "endDate": "2016-11-01",
+            "items": [
+                "Sivas Computer Osnabrück"
+            ]
+        },
+        {
+            "label": "",
+            "icon": "",
+            "startDate": "2014-02-01",
+            "endDate": "2014-03-01",
+            "items": [
+                "ECOS GmbH Osnabrück"
+            ]
+        }
+    ],
+    "extras": [
+        {
+            "label": "mosa.models.profile[languages].label",
+            "icon": "\ue894",
+
+            "items": [
+                {
+                    "key": "mosa.models.languages[german].label",
+                    "value": "mosa.models.languages.skills[native].label"
+                },
+                {
+                    "key": "mosa.models.languages[portuguese].label",
+                    "value": "mosa.models.languages.skills[native].label"
+                },
+                {
+                    "key": "mosa.models.languages[english].label",
+                    "value": "mosa.models.languages.skills[fluent].label"
+                }
+            ]
+        },
+        {
+            "label": "mosa.models.profile[hobbys].label",
+            "icon": "\ueb9b",
+
+            "items": [
+                {
+                    "key": "mosa.models.profile[hobbys][0].value"
+                },
+                {
+                    "key": "mosa.models.profile[hobbys][1].value"
+                },
+                {
+                    "key": "mosa.models.profile[hobbys][2].value"
+                }
+            ]
+        }
+    ]
+}

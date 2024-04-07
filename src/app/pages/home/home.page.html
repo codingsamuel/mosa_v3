@@ -1,14 +1,14 @@
 @if ((homeState$ | async); as state) {
-    <app-header [name]="(cvData.name | split: ' ')[0]" [branch]="cvData.branch"/>
+    <app-header [name]="cvData.firstName" [branch]="cvData.branch"/>
 
     <section id="aboutMe" class="section">
 
         <div class="content">
 
             <div class="profile">
-                <img [ngSrc]="'./assets/img/me2.png'" alt="Me" class="image" [width]="150" [height]="150">
+                <img [ngSrc]="cvData.imageUrl" alt="Me" class="image" [width]="150" [height]="150">
 
-                <h3 class="title">{{ cvData.name }}</h3>
+                <h3 class="title">{{ cvData.firstName }} {{ cvData.lastName }}</h3>
                 <p class="subtitle">{{ cvData.branch }}</p>
 
                 <div class="cv-list">
@@ -30,7 +30,7 @@
 
                 <div class="download-btn">
                     @if (cvData.downloads[ 0 ]; as download) {
-                        <a mat-raised-button color="primary" [href]="download.url" target="_blank">
+                        <a mat-raised-button color="primary" (click)="generateCv()" target="_blank">
                             <mat-icon>{{ download.icon }}</mat-icon>
                             {{ download.name | translate }}
                         </a>
@@ -50,13 +50,13 @@
 
                     <h2>{{ 'mosa.pages.home.my-journey.label' | translate }}</h2>
                     <div class="journey">
-                        @for (journey of cvData.journey; track $index) {
+                        @for (journey of cvData.timeline; track $index) {
                             <div class="journey-item">
                                 <div class="icon">
                                     <mat-icon>{{ journey.icon }}</mat-icon>
                                 </div>
                                 <div class="text">
-                                    <div class="title">{{ journey.title | translate }}</div>
+                                    <div class="title">{{ journey.label | translate }}</div>
                                     <div class="subtitle">
                                         @if(!journey.endDate) {
                                             since {{ journey.startDate | date: 'MMMM y' }}
@@ -67,8 +67,8 @@
                                     </div>
                                 </div>
                                 <ul>
-                                    @for (item of journey.list; track $index) {
-                                        <li>{{ item | translate }}</li>
+                                    @for (item of journey.items; track $index) {
+                                        <li>{{ item | as: '' | translate }}</li>
                                     }
                                 </ul>
                             </div>
@@ -174,7 +174,7 @@
                         <input type="radio" name="rating" id="rating5" value="5" (change)="addRating(5)">
                     </div>
                     <div>
-                        {{ rating.average | number: '1.0-1' }} out of {{ rating.count }}
+                        {{ 'mosa.pages.home.rating.label' | translate: { rating, total: rating.count } }}
                     </div>
                 </div>
             }
@@ -183,10 +183,17 @@
         <div class="download-btns">
             @for (download of cvData.downloads; track $index) {
                 <div>
-                    <a mat-raised-button color="primary" [href]="download.url" target="_blank">
-                        <mat-icon>{{ download.icon }}</mat-icon>
-                        {{ download.name | translate }}
-                    </a>
+                    @if ($index === 0) {
+                        <button mat-raised-button color="primary" (click)="generateCv()">
+                            <mat-icon>{{ download.icon }}</mat-icon>
+                            {{ download.name | translate }}
+                        </button>
+                    } @else {
+                        <a mat-raised-button color="primary" [href]="download.url" target="_blank">
+                            <mat-icon>{{ download.icon }}</mat-icon>
+                            {{ download.name | translate }}
+                        </a>
+                    }
                 </div>
             }
         </div>
