@@ -1,4 +1,6 @@
 {
+    "mosa.commons.since.label": "since",
+
     "mosa.pages.home.header.intro[0].label": "I'm {{ name }}",
     "mosa.pages.home.biography.label": "Biography",
     "mosa.pages.home.my-journey.label": "My Journey",
@@ -43,6 +45,7 @@
     "mosa.models.profile[languages].label": "Languages",
     "mosa.models.profile[skills].label": "Skills",
     "mosa.models.profile[other-skills].label": "Other Skills",
+    "mosa.models.profile[branch].label": "Frontend Developer",
     "mosa.models.profile.downloads[cv].label": "Download CV",
     "mosa.models.profile.downloads[figma].label": "Download Figma File",
     "mosa.models.profile.downloads[github].label": "Show GitHub Repo",
@@ -51,7 +54,7 @@
     "mosa.models.profile.timeline[0][list][0].label": "Set focus to design and frontend",
     "mosa.models.profile.timeline[0][list][1].label": "Active long term projects with clients",
     "mosa.models.profile.timeline[0][list][2].label": "Usage of Angular + Ionic",
-    "mosa.models.profile.timeline[1][title].label": "Apprentice Ship",
+    "mosa.models.profile.timeline[1][title].label": "Apprenticeship",
     "mosa.models.profile.timeline[1][list][0].label": "First touch with client projects",
     "mosa.models.profile.timeline[1][list][1].label": "Full stack development with C# and Angular",
     "mosa.models.profile.timeline[1][list][2].label": "Work with Unity and VR/AR",
@@ -62,7 +65,7 @@
     "mosa.models.profile.timeline[2][list][2].label": "First touch with JavaScript and PHP",
 
     "mosa.models.profile.timeline[0][cv-title].label": "Work Experience",
-    "mosa.models.profile.timeline[1][cv-title].label": "Apprentice Ship",
+    "mosa.models.profile.timeline[1][cv-title].label": "Apprenticeship",
     "mosa.models.profile.timeline[2][cv-title].label": "School",
     "mosa.models.profile.timeline[2][cv-list][0].label": "Berufsfachschule am Schölerberg",
     "mosa.models.profile.timeline[2][cv-list][1].label": "Bertha-von-Suttner Realschule",

@@ -67,8 +67,8 @@ export class PdfGeneratorService {
             doc.setFont('Montserrat', 'medium');
             doc.text(this.myTranslateService.instant(info.label).toUpperCase(), 16 + 16 + 4, y - 2);
             doc.setFont('Montserrat', 'regular');
-            doc.setFillColor('#350c30');
-            doc.rect(16, y + 3, 210 - 32, 2, 'F');
+            doc = jspdfUtil.dynamicBorder(y, 16, 210 - 32, 0, this.myTranslateService.instant(info.label).toUpperCase()).getDoc();
+
             y += 24;
 
             let x: number = 16;
@@ -127,18 +127,17 @@ export class PdfGeneratorService {
                 doc.setFont('Montserrat', 'medium');
                 doc = jspdfUtil.icon(entry.icon, { x: 210 + 16, y }).getDoc();
                 doc.text(`${this.myTranslateService.instant(entry.label).toUpperCase()}`, 210 + 16 + 16 + 4, y - 2);
-                doc.setFillColor('#350c30');
                 doc.setFont('Montserrat', 'regular');
-                doc.rect(210 + 16, y + 3, JspdfUtil.A4_WIDTH - 210 - 32, 2, 'F');
+                doc = jspdfUtil.dynamicBorder(y, 210 + 16, JspdfUtil.A4_WIDTH - 210 - 32, 210, this.myTranslateService.instant(entry.label).toUpperCase()).getDoc();
                 doc.setFontSize(12);
                 y += 20;
             }
 
             let dateText;
             if (!entry.endDate) {
-                dateText = `since ${this.dateFormat(entry.startDate)}`;
+                dateText = `${this.myTranslateService.instant('mosa.commons.since.label')} ${this.dateFormat(entry.startDate)}`;
             } else {
-                dateText = `${this.dateFormat(entry.startDate)} - ${this.dateFormat(entry.endDate)}`;
+                dateText = `${this.dateFormat(entry.startDate, i >= profileData.timeline.length - 2 ? 'MM/yyyy' : undefined)} - ${this.dateFormat(entry.endDate, i >= profileData.timeline.length - 2 ? 'MM/yyyy' : undefined)}`;
             }
 
             doc.text(dateText, 210 + 16, y);
@@ -161,9 +160,8 @@ export class PdfGeneratorService {
                 doc.setFont('Montserrat', 'medium');
                 doc = jspdfUtil.icon(entry.icon, { x: 210 + 16, y }).getDoc();
                 doc.text(`${this.myTranslateService.instant(entry.label).toUpperCase()}`, 210 + 16 + 16 + 4, y - 2);
-                doc.setFillColor('#350c30');
                 doc.setFont('Montserrat', 'regular');
-                doc.rect(210 + 16, y + 3, JspdfUtil.A4_WIDTH - 210 - 32, 2, 'F');
+                doc = jspdfUtil.dynamicBorder(y, 210 + 16, JspdfUtil.A4_WIDTH - 210 - 32, 210, this.myTranslateService.instant(entry.label).toUpperCase()).getDoc();
                 doc.setFontSize(12);
                 y += 20;
             }
@@ -187,7 +185,7 @@ export class PdfGeneratorService {
         doc.save('cv.pdf');
     }
 
-    private dateFormat(date: string): string {
-        return formatDate(date, 'MM/yyyy', this.myTranslateService.currentLang || this.myTranslateService.defaultLang);
+    private dateFormat(date: string, format: string = 'yyyy'): string {
+        return formatDate(date, format, this.myTranslateService.currentLang || this.myTranslateService.defaultLang);
     }
 }

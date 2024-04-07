@@ -59,7 +59,7 @@
                                     <div class="title">{{ journey.label | translate }}</div>
                                     <div class="subtitle">
                                         @if(!journey.endDate) {
-                                            since {{ journey.startDate | date: 'MMMM y' }}
+                                            {{ 'mosa.commons.since.label' | translate }} {{ journey.startDate | date: 'MMMM y' }}
                                         } @else {
                                             {{ journey.startDate | date: 'MMMM y' }} -
                                             {{ journey.endDate | date: 'MMMM y' }}

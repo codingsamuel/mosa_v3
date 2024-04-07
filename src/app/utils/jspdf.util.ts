@@ -51,7 +51,7 @@ export class JspdfUtil {
         return this;
     }
 
-    public image(image: MaterialSymbol | string, position: IPosition, size: ISize,): JspdfUtil {
+    public image(image: MaterialSymbol | string, position: IPosition, size: ISize): JspdfUtil {
         const img: HTMLImageElement = new Image();
         img.src = this.images.find((l: ILink) => l.name === image)?.url;
 
@@ -66,6 +66,19 @@ export class JspdfUtil {
         this.doc.setFont('MaterialSymbols', 'outlined');
         this.doc.text(icon, actualPosition.x, actualPosition.y);
         this.doc.setFont(currentFont.fontName, currentFont.fontStyle);
+        return this;
+    }
+
+    public dynamicBorder(y: number, x: number, width: number, offset: number, text: string): JspdfUtil {
+        const dim: { w: number, h: number } = this.doc.getTextDimensions(text);
+        this.doc.setFillColor('#350c30');
+
+        // Thick border
+        this.doc.rect(x, y + 3, dim.w + 16 + 12, 2, 'F');
+
+        // Thin border
+        this.doc.rect(offset + dim.w + 16 + 12 + 16, y + 4, width - dim.w - 16 - 12, 0.5, 'F');
+
         return this;
     }
 

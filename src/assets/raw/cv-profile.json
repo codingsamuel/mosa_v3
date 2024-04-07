@@ -1,7 +1,7 @@
 {
     "firstName": "Samuel",
     "lastName": "Marcelino Moutinho",
-    "branch": "Frontend Developer",
+    "branch": "mosa.models.profile[branch].label",
     "imageUrl": "./assets/img/me-portrait.png",
     "cvInfo": [
         {

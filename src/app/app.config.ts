@@ -5,6 +5,10 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { HttpClient, provideHttpClient } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { registerLocaleData } from '@angular/common';
+import localeDe from '@angular/common/locales/de';
+
+registerLocaleData(localeDe);
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http, './assets/i18n/', '.json');
