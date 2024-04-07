@@ -44,7 +44,7 @@ export class PdfGeneratorService {
         doc.text(profileData.lastName.toUpperCase(), 32, 80);
         doc.setFont('Montserrat', 'regular');
         doc.setFontSize(14);
-        doc.text(profileData.branch, 32, 112);
+        doc.text(this.myTranslateService.instant(profileData.branch), 32, 112);
 
         // Reset text color
         doc.setTextColor('#000000');

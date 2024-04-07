@@ -17,6 +17,12 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:application",
                     "options": {
+                        "allowedCommonJsDependencies": [
+                            "core-js",
+                            "jspdf",
+                            "raf",
+                            "rgbcolor"
+                        ],
                         "outputPath": "dist/codingsamuel",
                         "index": "src/index.html",
                         "browser": "src/main.ts",
